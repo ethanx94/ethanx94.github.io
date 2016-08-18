@@ -20,6 +20,10 @@
 		<script type="text/javascript" src="js/move-top.js"></script>
 		<script type="text/javascript" src="js/easing.js"></script>
 		<script type="text/javascript">
+            $(document).ready(function () {
+                $(".player").mb_YTPlayer();
+            });
+            
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
 					event.preventDefault();
@@ -32,8 +36,13 @@
 </head>
 <body>
 <!-- banner -->
-<div class="banner" id="home">
-	<div class="container"> 
+<div id="full-video">
+<!--Video Section-->
+<section class="video-section">
+    <div class="banner" id="home"> 
+        <video id="video_background" preload="auto" autoplay="" loop="">
+        <source src="images/banner.mp4" type="video/mp4">
+        </video>
 		<div class="top-header row">
             <!--<script src="js/classie.js"></script>-->
 		</div>
@@ -50,7 +59,10 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
+</section>
+<!--Video Section Ends Here-->
 </div>
+
 <!--/header-banner-->
 <!--about-->
 <div class="about text-center" id="about">
@@ -297,22 +309,12 @@
 			<div class="strip text-center"><img src="images/con1.png" alt=" "/></div>
 		</div>
 		<div class="contact-grids">
-			<div class="col-md-5 contact-left">
-				
-				
+			<div class="contact-center">
 				<ul>
 					<li><a href="mailto:richardsonethan@acm.org">richardsonethan@acm.org</a></li>
 				</ul>
 			</div>
-			<div class="col-md-7 contact-right">
-				
-				<form>
-					<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-					<input type="text" value="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}" required="">
-					<textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}" required="">Message</textarea>
-					<input type="submit" value="SEND">
-				</form>
-			</div>
+			
 			<div class="clearfix"></div>
 		</div>
 	</div>
