@@ -157,7 +157,7 @@ float:left;
 float:right;
 }
 .border {
-  background: #52edc7;
+  background: #69c3d0;
   width: 70%;
   margin: 0 auto;
   padding: 1px;
@@ -250,7 +250,7 @@ background: url(../images/icons.png) no-repeat 0px -71px;
 /*--//about--*/
 /*--my skill--*/
 .my-skills{
-	background: #1abc9c;
+	background: #3193aa;
 	padding: 60px 0;
 }
 .my-skills h3{
@@ -302,7 +302,7 @@ margin:0px auto;
 color:#ffffff;
 font-size:18px;
 font-family: 'Lato', sans-serif;
-background:#52edc7;
+background:#69c3d0;
 width: 36%;
 padding: 3px 0;
 }
@@ -312,13 +312,13 @@ display:block;
 color:#ffffff;
 font-size:18px;
 font-family: 'Lato', sans-serif;
-background:#4ad7b4;
+background:#3193aa;
 width: 36%;
 padding: 3px 0;
 }
 .edu-grid-master{
 
-background:#52edc7;
+background:#69c3d0;
 padding: 15px 0;
 }
 .edu-grid-master h3{
@@ -384,7 +384,7 @@ left: 40%;
 .work-grid h3{
 margin:0;
 color:#ffffff;
-background:#52edc7;
+background:#69c3d0;
 padding: 9px 0;
 font-size: 18px;
 font-weight: 600;
@@ -519,7 +519,7 @@ top:0;
 left:0;
 -webkit-transform: scale(0);
 transform: scale(0);
-background-color:rgba(82, 237, 199, 0.5);
+background-color:rgba(49, 147, 170, 0.5);
 }
 .gallery1:hover .textbox {
 -webkit-transform: scale(1);
@@ -569,7 +569,7 @@ font-weight:700;
 /*--//portfolio--*/
 /*--process--*/
 .process{
-background:#52edc7;
+background:#69c3d0;
   padding: 30px 0 65px 0;
 }
 .process-gird{
@@ -653,7 +653,7 @@ padding:0 25px;
 /*--//process--*/
 .test-banner {
   background: #ffffff;
-  border-top: 15px solid #52edc7;
+  border-top: 15px solid #69c3d0;
   width: 54%;
   margin: 50px auto 0 auto;
   padding: 82px 45px;
@@ -975,7 +975,7 @@ padding:0 0 60px 0;
 background:#eeeeee;
 }
 .strip-line{
-  background: #52edc7;
+  background: #69c3d0;
   width: 20%;
   margin: 0 auto;
   padding: 1px;
@@ -1023,7 +1023,7 @@ font-family: 'Lato', sans-serif;
 font-weight:700;
 }
 .blog-grid a:hover{
-color :#52edc7;
+color :#69c3d0;
 }
 .stripa{
 background:#dedede;
@@ -1086,7 +1086,7 @@ position:relative;
   top: 42%;
   left: 14%;
   width: 17.5%;
-  background: #52edc7;
+  background: #69c3d0;
   transform: rotate(-46deg);
   -webkit-transform: rotate(-46deg);
   -o-transform: rotate(-46deg);
@@ -1095,7 +1095,7 @@ position:relative;
 /*-- blog --*/
 /*-- contact --*/
 .contact{
-background:#52edc7;
+background:#69c3d0;
 padding:60px 0 0 0;
 }
 .contact-info h3 {
@@ -1223,7 +1223,7 @@ color:#ffffff;
 font-weight:400;
 }
 .footer p a{
-color:#52edc7;
+color:#69c3d0;
 }
 .footer p a:hover{
 color:#ffffff;
@@ -1319,7 +1319,7 @@ background:#dcdcdf;
   	font-size: 20px;
   	font-weight: 500;
   	margin: 20px 0;
-  	color:#52edc7;
+  	color:#69c3d0;
   	line-height: 1.6em;
 }
 .sample-page-info p{
@@ -1408,7 +1408,7 @@ width:100%;
 	
 }
 .comment-icons ul li a:hover{
-	color:#52edc7;
+	color:#69c3d0;
 	text-decoration:none;
 	transition:.5s all;
 }
@@ -1458,7 +1458,7 @@ font-weight:600;
 }
 .category ul li a:hover{
 	transition:.5s all;
-	color:#52edc7;
+	color:#69c3d0;
 	text-decoration:none;
 }
 .recent-posts-info {
@@ -1476,7 +1476,7 @@ font-weight:600;
 	margin: 7px 0;
 }
 .posts-right h5 a{	
-	color: #52edc7;
+	color: #69c3d0;
 	transition:.5s all;
 	text-decoration:none;
 }
@@ -1516,7 +1516,7 @@ margin: 12px 0 0 0;
 	font-weight: 600;
 }
 .cmnt-icon-right p a {
-  color: #52edc7;
+  color: #69c3d0;
  
   text-decoration:none;
 }
@@ -1560,7 +1560,7 @@ margin: 12px 0 0 0;
   text-decoration:none;
 }
 .admin-text-right span a:hover{
-  color: #52edc7;
+  color: #69c3d0;
   transition:.5s all;
 }
 .related-posts-grids {
@@ -1598,7 +1598,7 @@ margin: 12px 0 0 0;
 }
 .response-text-left h5 a {
   text-decoration: none;
-  color: #52edc7;
+  color: #69c3d0;
 }
 .response-text-left h5 a:hover{
   text-decoration: none;
@@ -1643,7 +1643,7 @@ margin: 12px 0 0 0;
 	font-size: 14px;
 }
 .response-text-right ul li a:hover{
-	color:#52edc7;
+	color:#69c3d0;
 	transition:.5s all;
 	text-decoration:none;
 }
@@ -1695,7 +1695,7 @@ margin: 12px 0 0 0;
   border: 3px solid #2b2b2b;
 }
 .coment-form input[type="submit"]:hover{
-	border:3px solid #52edc7;
+	border:3px solid #69c3d0;
 }
 /*-- //single-page --*/
 /*-- to-top --*/
