@@ -9,7 +9,7 @@ class Projects extends Component {
   state = {
     items: [
       { key: 'Project1', color: '#F1948A', title: 'Wednesday App', subtext: 'React Native - Frog App', url: 'https://github.com/ethanx94/WednesdayApp/' },
-      { key: 'Project2', color: '#D7BDE2', title: 'SIUC Virtual Campus', subtext: 'JS - HTML5 Phaser Demo', url: './VirtualCampus' },
+      { key: 'Project2', color: '#D7BDE2', title: 'SIUC Virtual Campus', subtext: 'JS - HTML5 Phaser Demo', url: '/PhaserVirtualCampus' },
       { key: 'Project3', color: '#85C1E9', title: 'SIUC ACM', subtext: 'ASP.NET - Local Chapter Page', url: 'http://siucacm.herokuapp.com' },
       { key: 'Project4', color: '#73C6B6', title: 'GamerTagDB', subtext: 'ASP.NET - Share Gamertags At Your Event', url: 'http://devpost.com/software/gamer-tag-database-share-gamer-tags-at-your-event' },
       { key: 'Project5', color: '#927151', title: 'Rapid Braille', subtext: 'Java/Python - Braille Translator', url: 'https://github.com/ethanx94/RapidBraille' },
