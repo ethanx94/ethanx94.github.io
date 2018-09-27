@@ -1,46 +1,35 @@
 {
   "name": "ethanx94",
-  "version": "1.0.0",
-  "description": "Ethan Richardson Personal Mobile Page",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack --mode production --progress",
-    "start": "webpack-dev-server --mode development --progress --open"
-  },
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
   "dependencies": {
     "emotion": "^9.2.6",
     "react-emotion": "^9.2.6",
     "emotion-server": "^9.2.6",
     "emotion-theming": "^9.2.6",
     "onsenui": "^2.10.1",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-hot-loader": "4.3.3",
+    "react": "^16.5.2",
+    "react-app-rewire-hot-loader": "^1.0.1",
+    "react-app-rewired": "^1.6.2",
+    "react-dom": "^16.5.2",
+    "react-hot-loader": "^4.3.11",
+    "react-scripts": "1.1.5",
     "react-onsenui": "^1.11.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "7.1.4",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-compat": "^2.2.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-react": "^7.7.0",
-    "babel-plugin-emotion": "^9.2.6",
-    "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^0.21.0",
-    "url-loader": "^1.0.1",
-    "webpack": "^4.12.1",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
+    "eslint-plugin-react": "^7.7.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test":  "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

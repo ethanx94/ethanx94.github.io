@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { Page, ProgressBar, ListHeader, List, ListItem } from 'react-onsenui';
 
 import Header from '../components/Header';
-import siuLogo from '../../../images/SIUlogo.png';
-import cdmLogo from '../../../images/CDMlogo.jpg';
+import siuLogo from '../../images/SIUlogo.png';
+import cdmLogo from '../../images/CDMlogo.jpg';
 
 class Skills extends Component {
   renderToolbar = () => <Header title="Skills and Work Experience" />;

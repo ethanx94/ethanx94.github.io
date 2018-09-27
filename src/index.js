@@ -1,15 +1,32 @@
-import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 import App from './App';
+import registerServiceWorker from './registerServiceWorker';
 
-const render = Component =>
+// Add this import:
+import { AppContainer } from 'react-hot-loader';
+
+// Wrap the rendering in a function:
+const render = () => {
   ReactDOM.render(
+    // Wrap App inside AppContainer
     <AppContainer>
-      <Component />
+      <App />
     </AppContainer>,
     document.getElementById('root')
   );
+};
 
-render(App);
-if (module.hot) module.hot.accept('./App', () => render(App));
+// Do this once
+registerServiceWorker();
+
+// Render once
+render();
+
+// Webpack Hot Module Replacement API
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    render();
+  });
+}

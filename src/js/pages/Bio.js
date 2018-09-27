@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Page, Card, List, ListHeader, ListItem, Button } from 'react-onsenui';
 
 import Header from '../components/Header';
-import personalPic from '../../../images/1.png';
+import personalPic from '../../images/1.png';
 
 class Bio extends Component {
   renderToolbar = () => <Header title="Ethan Richardson" />;
