@@ -1,10 +1,21 @@
 import React from 'react';
 import { Navigator } from 'react-onsenui';
+import 'onsenui/css/onsenui.css';
+import 'onsenui/css/onsen-css-components.css';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
 import Main from './js/pages/Main';
 import './css/main.css';
-import '../node_modules/onsenui/css/onsenui.css';
-import '../node_modules/onsenui/css/onsen-css-components.css';
+import './css/normalize.min.css';
+
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+});
 
 export default class App extends React.Component {
   renderPage = (route, navigator) => {
@@ -18,7 +29,7 @@ export default class App extends React.Component {
       <Navigator
         initialRoute={{
           component: Main,
-          props: { key: 'main' }
+          props: { key: 'main' },
         }}
         renderPage={this.renderPage}
       />

@@ -5,6 +5,7 @@ import Bio from './Bio';
 import Links from './Links';
 import Skills from './Skills';
 import Projects from './Projects';
+import Map from './Map';
 
 class Main extends React.Component {
   renderTabs = () => {
@@ -12,28 +13,33 @@ class Main extends React.Component {
       {
         content: <Bio key="Bio" navigator={this.props.navigator} />,
         title: 'Bio',
-        icon: 'md-home'
+        icon: 'md-home',
       },
       {
         content: <Skills key="Skills" navigator={this.props.navigator} />,
         title: 'Skills',
-        icon: 'md-info'
+        icon: 'md-info',
       },
       {
         content: <Projects key="Projects" navigator={this.props.navigator} />,
         title: 'Projects',
-        icon: 'md-settings'
+        icon: 'md-settings',
       },
       {
         content: <Links key="Links" navigator={this.props.navigator} />,
         title: 'Links',
-        icon: 'md-link'
+        icon: 'md-link',
+      },
+      {
+        content: <Map key="Map" navigator={this.props.navigator} />,
+        title: 'Map',
+        icon: 'md-map',
       },
     ];
 
     return sections.map((section) => ({
       content: section.content,
-      tab: <Tab key={section.title} label={section.title} icon={section.icon} />
+      tab: <Tab key={section.title} label={section.title} icon={section.icon} />,
     }));
   }
 
