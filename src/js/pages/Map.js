@@ -6,7 +6,7 @@ import toGeoJSON from 'togeojson';
 import Header from '../components/Header';
 
 class MapPage extends Component {
-  renderToolbar = () => <Header title="Ethan Richardson" />;
+  renderToolbar = () => <Header title="Places I've Visited" />;
 
   state = {
     lat: 37.7220,
@@ -14,10 +14,22 @@ class MapPage extends Component {
     zoom: 15,
     loaded: false,
     myGeoJSON: {},
+    height: 0,
+    width: 0,
+  }
+
+  updateDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   async componentDidMount() {
+    this.updateDimensions();
+    window.addEventListener('resize', this.updateDimensions);
     await this.getKmlToGeoJSON();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
   }
 
   getKmlToGeoJSON = async () => {
@@ -46,7 +58,7 @@ class MapPage extends Component {
   }
 
   render() {
-    const { loaded, myGeoJSON, lat, lng, zoom } = this.state;
+    const { loaded, myGeoJSON, lat, lng, zoom, height, width } = this.state;
     return (
       <Page renderToolbar={this.renderToolbar}>
         {!loaded
@@ -55,6 +67,7 @@ class MapPage extends Component {
           <Map
             center={[lat, lng]}
             zoom={zoom}
+            style={{ height, width }}
           >
             <TileLayer
               url="https://api.mapbox.com/styles/v1/nkmap/cjftto4dl8hq32rqegicxuwjz/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmttYXAiLCJhIjoiY2lwN2VqdDh2MDEzbXN5bm9hODJzZ2NlZSJ9.aVnii-A7yCa632_COjFDMQ"
