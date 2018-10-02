@@ -2,12 +2,43 @@ import React, { Component } from 'react';
 import { Page } from 'react-onsenui';
 import { Map, TileLayer, GeoJSON, Marker } from 'react-leaflet';
 import toGeoJSON from 'togeojson';
-import Leaflet from 'leaflet';
+import L from 'leaflet';
 import libmoji from 'libmoji';
 
 import Header from '../../components/Header';
 
 const HEADER_HEIGHT = 44;
+
+const baseIcon = {
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+};
+
+const blueIcon = new L.Icon(baseIcon);
+
+const greenIcon = new L.Icon({
+  ...baseIcon,
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+});
+
+const redIcon = new L.Icon({
+  ...baseIcon,
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+});
+
+const yellowIcon = new L.Icon({
+  ...baseIcon,
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+});
+
+const violetIcon = new L.Icon({
+  ...baseIcon,
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+});
 
 class MapPage extends Component {
   renderToolbar = () => <Header title="Places I've Visited" back />;
@@ -39,7 +70,7 @@ class MapPage extends Component {
     const transparent = Number(true);
     const scale = 1;
     this.setState({
-      bitmojiIcon: new Leaflet.Icon({
+      bitmojiIcon: new L.Icon({
         iconUrl: libmoji.buildRenderUrl(standingComicId, myAvatarId, transparent, scale),
         iconSize: [95, 95],
         iconAnchor: [50, 75],
@@ -67,12 +98,31 @@ class MapPage extends Component {
   onEachFeature = (feature, layer) => {
     if (feature.properties && feature.properties.Notes) {
       let myPopup = '';
-      myPopup += feature.properties.City ? `City: ${feature.properties.City}<br />` : '';
+      myPopup += feature.properties.CityState ? `City: ${feature.properties.CityState}<br />` : '';
       myPopup += feature.properties.Month ? `Month: ${feature.properties.Month}<br />` : '';
       myPopup += feature.properties.Year ? `Year: ${feature.properties.Year}<br />` : '';
       myPopup += feature.properties.Country ? `Country: ${feature.properties.Country}<br />` : '';
       myPopup += feature.properties.Notes ? `Notes: ${feature.properties.Notes}` : '';
       layer.bindPopup(myPopup);
+    }
+  }
+
+  pointToLayer = (feature, latlng) => {
+    switch (feature.properties.Year) {
+      case '2018':
+        return L.marker(latlng, { icon: yellowIcon });
+      case '2017':
+        return L.marker(latlng, { icon: greenIcon });
+      case '2016':
+      case '2015':
+        return L.marker(latlng, { icon: blueIcon });
+      case '2014':
+        return L.marker(latlng, { icon: redIcon });
+      case '2013':
+      case '2012':
+        return L.marker(latlng, { icon: violetIcon });
+      default:
+        return L.marker(latlng, { icon: blueIcon });
     }
   }
 
@@ -93,7 +143,7 @@ class MapPage extends Component {
               attribution="<a href='https://batchgeo.com/map/ethanx94'>TO SEE MORE DETAILS CLICK HERE...</a>"
             />
             <Marker key="nearCDale" position={[lat, lng]} icon={bitmojiIcon} />
-            <GeoJSON key="my-geojson" data={myGeoJSON} onEachFeature={this.onEachFeature} />
+            <GeoJSON key="my-geojson" pointToLayer={this.pointToLayer} data={myGeoJSON} onEachFeature={this.onEachFeature} />
           </Map>)}
       </Page>
     );
