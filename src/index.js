@@ -1,22 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { platform } from 'onsenui';
+import { AppContainer } from 'react-hot-loader';
 
-import './index.css';
+import './globalStyles';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-// Add this import:
-import { AppContainer } from 'react-hot-loader';
 
-// Wrap the rendering in a function:
 const render = () => {
   ReactDOM.render(
-    // Wrap App inside AppContainer
     <AppContainer>
       <App />
     </AppContainer>,
-    document.getElementById('root')
+    document.getElementById('root'),
   );
   if (platform.isIPhoneX()) {
     document.documentElement.setAttribute('onsflag-iphonex-portrait', '');

@@ -5,7 +5,6 @@ import Bio from './Bio';
 import Links from './Links';
 import Skills from './Skills';
 import Projects from './Projects';
-import Map from './Map';
 
 class Main extends React.Component {
   renderTabs = () => {
@@ -29,11 +28,6 @@ class Main extends React.Component {
         content: <Links key="Links" navigator={this.props.navigator} />,
         title: 'Links',
         icon: 'md-link',
-      },
-      {
-        content: <Map key="Map" navigator={this.props.navigator} />,
-        title: 'Map',
-        icon: 'md-map',
       },
     ];
 

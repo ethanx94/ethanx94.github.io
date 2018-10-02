@@ -17,22 +17,18 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
-export default class App extends React.Component {
-  renderPage = (route, navigator) => {
-    const props = route.props || {};
-    props.navigator = navigator;
-    return React.createElement(route.component, props);
-  }
+const App = () => (
+  <Navigator
+    initialRoute={{
+      component: Main,
+      props: { key: 'main' },
+    }}
+    renderPage={(route, navigator) => {
+      const props = route.props || {};
+      props.navigator = navigator;
+      return React.createElement(route.component, props);
+    }}
+  />
+);
 
-  render() {
-    return (
-      <Navigator
-        initialRoute={{
-          component: Main,
-          props: { key: 'main' },
-        }}
-        renderPage={this.renderPage}
-      />
-    );
-  }
-}
+export default App;

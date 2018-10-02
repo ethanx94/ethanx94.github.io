@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Page, Carousel, CarouselItem, Button } from 'react-onsenui';
+import { css } from 'react-emotion';
 
 import Header from '../components/Header';
 
@@ -38,25 +39,19 @@ class Projects extends Component {
         <Carousel onPostChange={this.handleChange} index={index} fullscreen swipeable autoScroll overscrollable>
           {items.map(item => (
             <CarouselItem key={item.key} style={{ backgroundColor: item.color }}>
-              <div style={{ marginTop: '50%', textAlign: 'center' }}>
-                <h2>{item.title}</h2>
-                <p>{item.subtext}</p>
-                <Button modifier="outline" onClick={this.goToProject}>
+              <div className={RowStyle}>
+                <div>
+                  <h2>{item.title}</h2>
+                  <p>{item.subtext}</p>
+                  <Button modifier="outline" onClick={this.goToProject}>
                   View
-                </Button>
+                  </Button>
+                </div>
               </div>
             </CarouselItem>
           ))}
         </Carousel>
-        <div style={{
-          textAlign: 'center',
-          fontSize: '20px',
-          position: 'absolute',
-          bottom: '36px',
-          left: '0px',
-          right: '0px'
-        }}
-        >
+        <div className={NavDotsStyle}>
           {items.map(({ key }, curIndex) => (
             // eslint-disable-next-line
             <span key={key} style={{ cursor: 'pointer' }} onClick={() => this.setIndex(curIndex)}>
@@ -68,5 +63,29 @@ class Projects extends Component {
     );
   }
 }
+
+const RowStyle = css`
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: auto;
+`;
+
+const NavDotsStyle = css`
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  bottom: 36px;
+  left: 0px;
+  right: 0px;
+`;
 
 export default Projects;

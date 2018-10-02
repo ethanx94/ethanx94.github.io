@@ -15,7 +15,7 @@ class Skills extends Component {
       { key: 'C#/ASP.NET', progress: 80 },
       { key: 'SQL', progress: 70 },
       { key: 'Python', progress: 60 },
-      { key: 'Java', progress: 50 }
+      { key: 'Java', progress: 50 },
     ],
     work: [
       { key: 'Southern Illinois University Museum', image: siuLogo, duration: '2015-2016' },
@@ -23,15 +23,16 @@ class Skills extends Component {
     ],
   }
 
-  renderRow = ({key, image, duration}) =>
+  renderRow = ({ key, image, duration }) => (
     <ListItem key={key}>
-      <div className='left'>
-        <img src={image} className='list-item__thumbnail' />
+      <div className="left">
+        <img src={image} alt="" className="list-item__thumbnail" />
       </div>
-      <div className='center'>
+      <div className="center">
         {key}<br />{duration}
       </div>
     </ListItem>
+  );
 
   render() {
     const { skills, work } = this.state;

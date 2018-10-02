@@ -4687,6 +4687,10 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+libmoji@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/libmoji/-/libmoji-2.3.0.tgz#58fcc33e2fa71cc3299f31a6ae19d52181f1c13a"
+
 lie@~3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
