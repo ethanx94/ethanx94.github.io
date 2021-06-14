@@ -1,4 +1,22 @@
 {
-  "presets": ["react", "stage-1"],
-  "plugins": ["emotion", "react-hot-loader/babel"]
+  "plugins": [
+    [
+      "module-resolver", {
+        "root": ["."],
+        "alias": {
+          "styles": "./styles"
+        },
+        "cwd": "babelrc"
+    }],
+    [
+      "wrap-in-js",
+      {
+        "extensions": ["css$", "scss$"]
+      }
+    ]
+  ],
+  "presets": [
+    "next/babel"
+  ],
+  "ignore": []
 }

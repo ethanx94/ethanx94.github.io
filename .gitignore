@@ -38,3 +38,8 @@ Thumbs.db
 
 node_modules/*
 www/*
+.parcel-cache
+
+.next
+.vscode
+out/
