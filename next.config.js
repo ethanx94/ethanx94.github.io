@@ -1,7 +1,15 @@
 const path = require('path')
 const glob = require('glob')
 
+const pathPrefix = process.env.NODE_ENV === 'production'
+  ? '/docs'
+  : '';
+
 module.exports = {
+  assetPrefix: pathPrefix,
+  env: {
+    pathPrefix,
+  },
   webpack: (config, { dev }) => {
     config.module.rules.push(
       {

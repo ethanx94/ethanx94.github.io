@@ -40,7 +40,6 @@ const IndexPage = () => {
 
     const handleOpenArticle = (articleLocal) => {
         setIsArticleVisible(!isArticleVisible);
-        console.log(articleLocal);
         setArticle(articleLocal);
 
         setTimeout(() => {
