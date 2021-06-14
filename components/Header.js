@@ -5,7 +5,7 @@ import faGem from '@fortawesome/fontawesome-free-regular/faGem'
 const Header = ({ onOpenArticle, timeout }) => (
     <header id="header" style={timeout ? {display: 'none'} : {}}>
         <div className="logo">
-            <img src="/static/images/1.png" alt="" />
+            <img className="logo" src="/static/images/1.png" alt="" />
         </div>
         <div className="content">
             <div className="inner">
